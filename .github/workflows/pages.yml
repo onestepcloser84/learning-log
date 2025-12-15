@@ -1,0 +1,48 @@
+name: deploy-pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+
+      - name: configure git credentials
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: set up python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: set cache id
+        id: cache_id
+        run: echo "CACHE_ID=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: set up cache
+        uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ steps.cache_id.outputs.CACHE_ID }}
+          path: ~/.cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: deploy to GitHub Pages
+        run: |
+          mkdocs gh-deploy --force --verbose
