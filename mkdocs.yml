@@ -1,0 +1,97 @@
+# project information
+site_name: learning-log
+site_url: https://onestepcloser84.github.io/learning-log/
+site_author: Abhinav Kumar
+site_description: A personal blog documenting my learning journey in technology and programming.
+
+# repository information
+repo_name: onestepcloser84/learning-log
+repo_url: https://github.com/onestepcloser84/learning-log
+
+# theme configuration
+theme:
+  name: material
+  features:
+    # - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+# plugins
+plugins:
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - tags
+
+# additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/onestepcloser84/learning-log
+
+# extentions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: onestepcloser84
+      repo: learning-log
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+
+# page tree
+nav:
+  - Home: index.md
+  - Posts:
+      - Per Directory Git Indentity: blog/posts/20251215-per-directory-git-identity.md
+  - Tags:
+      - blog/tags.md
