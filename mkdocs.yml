@@ -91,7 +91,5 @@ markdown_extensions:
 # page tree
 nav:
   - Home: index.md
-  - Posts:
-      - Per Directory Git Indentity: blog/posts/20251215-per-directory-git-identity.md
-  - Tags:
-      - blog/tags.md
+  - Posts: blog/index.md
+  - Tags: blog/tags.md

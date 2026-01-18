@@ -1,8 +1,6 @@
 ---
 date: 2025-12-15
 title: Per directory git user details for different projects
-authors:
-  - onestepcloser84
 categories:
   - General
 tags:
