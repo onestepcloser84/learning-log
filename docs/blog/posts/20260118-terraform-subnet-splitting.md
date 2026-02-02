@@ -178,9 +178,7 @@ This separation ensures that:
 2. **Scalable**: Easy to add more subnet types (e.g., EKS subnets) using the same pattern
 3. **Balanced**: Each subnet type gets equal address space (one-third of the VPC)
 4. **Flexible**: Works for both 2 and 3 AZ scenarios
-5. **Secure**: Clear separation between public, semi-private, and isolated subnets
-
-## Additional Considerations
+5. **Secure**: Clear separation between public, semi-private, and isolated subnets## Additional Considerations
 
 - When using 3 AZs with `zone_bits = 2`, you get 4 possible subnets per block but only use 3. The unused subnet (idx=3) is simply not referenced.
 - The first-level split using `newbits = 2` gives us 4 possible blocks, but we only use 3 (netnum 0, 1, 2). The fourth block (netnum 3) is available for future expansion.
